@@ -1,0 +1,19 @@
+{% extends 'finalapp/Navbar.html' %}
+
+{% block content %}
+    <form action="" method="post" class="w-50 shadow p-5">
+        {% csrf_token %}
+        <label for="" class="form-label">Enter Username</label>
+        <input type="text" class="form-control" name="username">
+        <br><br>
+        <label for="" class="form-label">Enter Password</label>
+        <input type="password" class="form-control" name="password">
+        <br>
+        {% if messages %}
+            {% for i in messages %}
+                <p class="text-danger">{{i}}</p>
+            {% endfor %}
+        {% endif %}
+        <input type="submit" class="btn btn-success">
+    </form>
+{% endblock %}
